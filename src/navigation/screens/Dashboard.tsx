@@ -38,8 +38,12 @@ function SmallButton(props: {
           ></Image>
         </View>
       )}
-      <Text style={styles.smallButtonName}>{props.name}</Text>
-      <Text style={styles.smallButtonState}>{props.state}</Text>
+      <Text style={[styles.smallButtonText, styles.smallButtonName]}>
+        {props.name}
+      </Text>
+      <Text style={[styles.smallButtonText, styles.smallButtonState]}>
+        {props.state}
+      </Text>
     </Pressable>
   );
 }
@@ -76,7 +80,7 @@ export function Dashboard() {
           onPress={() => {
             navigation.navigate("Devices");
           }}
-          style={[styles.button, styles.bigButton, styles.bigButtonGap]}
+          style={[styles.button, styles.bigButton]}
         >
           <View style={styles.bigButtonIconContainer}>
             <Image
@@ -86,7 +90,7 @@ export function Dashboard() {
             ></Image>
           </View>
           <Text style={[styles.text, styles.bigButtonTemp]}>26°C</Text>
-          <Text style={[styles.text, styles.bigButtonLabel]}>Living Room</Text>
+          <Text style={[styles.text, styles.subtext]}>Living Room</Text>
         </Pressable>
         <View style={styles.smallButtonContainer}>
           <SmallButton
@@ -119,9 +123,7 @@ export function Dashboard() {
           }}
           style={styles.viewAllButton}
         >
-          <Text style={[styles.text, styles.viewAllText]}>
-            View All Devices ➔
-          </Text>
+          <Text style={[styles.text, styles.subtext]}>View All Devices ➔</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -129,74 +131,25 @@ export function Dashboard() {
 }
 
 const styles = StyleSheet.create({
+  // Shared text helpers
   text: {
     alignSelf: "center",
     fontFamily: "Bunken-Bold",
   },
-
-  fill: {
-    height: "100%",
-    width: "100%",
-  },
-
-  smallButtonIconContainer: {
-    width: 40,
-    height: 40,
-  },
-
-  smallButtonName: {
-    fontFamily: "Bunken-Bold",
-    fontSize: 20,
-  },
-
-  smallButtonState: {
-    fontFamily: "Bunken-Bold",
-    fontSize: 16,
-  },
-
-  bigButtonGap: {
-    gap: 8,
-  },
-
-  bigButtonIconContainer: {
-    width: 48,
-    height: 48,
-    alignSelf: "center",
-  },
-
-  bigButtonTemp: {
-    fontFamily: "Bunken-ExtraBold",
-    fontSize: 52,
-  },
-
-  bigButtonLabel: {
+  subtext: {
     fontSize: 18,
   },
 
-  viewAllButton: {
-    marginVertical: 24,
-  },
-
-  viewAllText: {
-    fontSize: 18,
-  },
-
+  // Layout
   container: {
     flex: 1,
     padding: 24,
   },
-
   scrollContainer: {
     flex: 1,
   },
 
-  settingsButton: {
-    width: 32,
-    height: 32,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
+  // Header
   header: {
     marginTop: 32,
     flexDirection: "row",
@@ -204,39 +157,78 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 16,
   },
-
   headerText: {
     alignContent: "center",
     fontSize: 32,
     fontFamily: "Bunken-ExtraBold",
   },
+  settingsButton: {
+    width: 32,
+    height: 32,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 
+  // Images
+  fill: {
+    height: "100%",
+    width: "100%",
+  },
+
+  // Big temperature card
   button: {
     borderColor: "#2e2e2e",
     borderWidth: 1,
     borderRadius: 16,
   },
-
   bigButton: {
     justifyContent: "center",
     alignSelf: "stretch",
     flex: 1,
     minHeight: 180,
     marginBottom: 8,
+    gap: 8,
+  },
+  bigButtonIconContainer: {
+    width: 48,
+    height: 48,
+    alignSelf: "center",
+  },
+  bigButtonTemp: {
+    fontFamily: "Bunken-ExtraBold",
+    fontSize: 52,
   },
 
+  // Small device buttons
   smallButtonContainer: {
     flexWrap: "wrap",
     flexDirection: "row",
     gap: 10,
     marginTop: 10,
   },
-
   smallButton: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     gap: 8,
     paddingVertical: 4,
+  },
+  smallButtonIconContainer: {
+    width: 40,
+    height: 40,
+  },
+  smallButtonText: {
+    fontFamily: "Bunken-Bold",
+  },
+  smallButtonName: {
+    fontSize: 20,
+  },
+  smallButtonState: {
+    fontSize: 16,
+  },
+
+  // View all button
+  viewAllButton: {
+    marginVertical: 24,
   },
 });
