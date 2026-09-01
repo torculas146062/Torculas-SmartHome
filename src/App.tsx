@@ -19,6 +19,7 @@ export function App() {
 
   const [loaded, error] = useFonts({
     "Bunken-Bold": require("../assets/fonts/BunkenTechSansPro-Bold.ttf"),
+    "Bunken-ExtraBold": require("../assets/fonts/BunkenTechSansPro-ExBd.ttf")
   });
 
   React.useEffect(() => {

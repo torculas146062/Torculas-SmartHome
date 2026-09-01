@@ -1,20 +1,27 @@
 import {
   createStaticNavigation,
   StaticParamList,
-} from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Dashboard } from './screens/Dashboard';
-import { Settings } from './screens/Settings';
-import { NotFound } from './screens/NotFound';
-import { Devices } from './screens/Devices';
+} from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Dashboard } from "./screens/Dashboard";
+import { Settings } from "./screens/Settings";
+import { NotFound } from "./screens/NotFound";
+import { Devices } from "./screens/Devices";
 
 const RootStack = createNativeStackNavigator({
   initialRouteName: "Dashboard",
+
+  screenOptions: {
+    headerTitleStyle: {
+      fontFamily: "Bunken-Bold",
+    },
+  },
+
   screens: {
     Dashboard: {
       screen: Dashboard,
       options: {
-        title: 'Smart Home',
+        title: "Smart Home",
       },
     },
     Settings: {
@@ -26,14 +33,14 @@ const RootStack = createNativeStackNavigator({
       screen: Devices,
       options: { presentation: "modal" },
     },
-    
+
     NotFound: {
       screen: NotFound,
       options: {
-        title: '404',
+        title: "404",
       },
       linking: {
-        path: '*',
+        path: "*",
       },
     },
   },
