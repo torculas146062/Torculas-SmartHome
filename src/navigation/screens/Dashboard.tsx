@@ -125,7 +125,9 @@ export function Dashboard() {
             }}
             style={styles.viewAllButton}
           >
-            <Text style={[styles.text, styles.bigButtonTemp, styles.subtext]}>View All Devices ➔</Text>
+            <Text style={[styles.text, styles.bigButtonTemp, styles.subtext]}>
+              View All Devices ➔
+            </Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -141,6 +143,8 @@ const styles = StyleSheet.create({
   },
   subtext: {
     fontSize: 18,
+    alignSelf: "stretch",
+    textAlign: "center",
   },
 
   // Layout
@@ -168,6 +172,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     alignContent: "center",
+    flex: 1,
     fontSize: 32,
     fontFamily: "Bunken-ExtraBold",
   },
@@ -193,6 +198,7 @@ const styles = StyleSheet.create({
   bigButton: {
     justifyContent: "center",
     alignSelf: "stretch",
+    alignItems: "stretch",
     flex: 1,
     minHeight: 200,
     marginBottom: 8,
@@ -206,6 +212,8 @@ const styles = StyleSheet.create({
   bigButtonTemp: {
     fontFamily: "Bunken-ExtraBold",
     fontSize: 52,
+    alignSelf: "stretch",
+    textAlign: "center",
   },
 
   // Small device buttons
@@ -228,6 +236,8 @@ const styles = StyleSheet.create({
   },
   smallButtonText: {
     fontFamily: "Bunken-Bold",
+    alignSelf: "stretch",
+    textAlign: "center",
   },
   smallButtonName: {
     fontSize: 20,

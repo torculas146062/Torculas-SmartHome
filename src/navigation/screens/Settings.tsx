@@ -16,7 +16,7 @@ export function Settings() {
         style={styles.item}
         onPress={() => setNotificationToggle((a) => !a)}
       >
-        <Text style={styles.text}>Notifications</Text>
+        <Text style={[styles.text, styles.stretch]}>Notifications</Text>
         <Switch
           value={notificationToggle}
           onValueChange={setNotificationToggle}
@@ -29,7 +29,7 @@ export function Settings() {
         }}
         style={styles.item}
       >
-        <Text style={styles.text}>Temperature Unit</Text>
+        <Text style={[styles.text, styles.stretch]}>Temperature Unit</Text>
         <Text style={styles.text}>°C</Text>
       </Pressable>
     </View>
@@ -37,6 +37,10 @@ export function Settings() {
 }
 
 const styles = StyleSheet.create({
+  stretch: {
+    flex: 1,
+  },
+
   container: {
     flex: 1,
     padding: 24,
@@ -61,7 +65,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    minHeight: 60
+    minHeight: 60,
   },
 
   text: {

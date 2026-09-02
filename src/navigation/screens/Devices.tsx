@@ -51,7 +51,7 @@ export function Devices() {
           }}
           style={styles.button}
         >
-          <View>
+          <View style={styles.stretch}>
             <Text style={styles.text}>{device.name}</Text>
             <Text style={styles.subtext}>{device.location}</Text>
           </View>
@@ -64,6 +64,10 @@ export function Devices() {
 }
 
 const styles = StyleSheet.create({
+  stretch: {
+    flex: 1,
+  },
+
   container: {
     flex: 1,
     padding: 24,
@@ -96,9 +100,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 22,
     paddingVertical: 24,
 
-
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
   },
 });
