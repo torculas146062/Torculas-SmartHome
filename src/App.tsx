@@ -8,6 +8,7 @@ import * as SplashScreen from "expo-splash-screen";
 import * as React from "react";
 import { Platform, useColorScheme } from "react-native";
 import { Navigation } from "./navigation";
+import { setStatusBarStyle } from "expo-status-bar";
 
 Asset.loadAsync([
   ...NavigationAssets,
@@ -34,6 +35,8 @@ export function App() {
   const [fontsLoaded, setFontsLoaded] = React.useState(!needsRuntimeFonts);
 
   React.useEffect(() => {
+    setStatusBarStyle("dark")
+
     if (!needsRuntimeFonts) {
       return;
     }
