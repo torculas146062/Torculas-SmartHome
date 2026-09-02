@@ -31,7 +31,39 @@
           "image": "./assets/splash-icon.png"
         }
       ],
-      "expo-font",
+      [
+        "expo-font",
+        {
+          "android": {
+            "fonts": [
+              {
+                "fontFamily": "Bunken Tech Sans Pro Bold",
+                "fontDefinitions": [
+                  {
+                    "path": "./src/assets/fonts/BunkenTechSansPro-Bold.ttf",
+                    "weight": 700
+                  }
+                ]
+              },
+              {
+                "fontFamily": "Bunken Tech Sans Pro ExBd",
+                "fontDefinitions": [
+                  {
+                    "path": "./src/assets/fonts/BunkenTechSansPro-ExBd.ttf",
+                    "weight": 800
+                  }
+                ]
+              }
+            ]
+          },
+          "ios": {
+            "fonts": [
+              "./src/assets/fonts/BunkenTechSansPro-Bold.ttf",
+              "./src/assets/fonts/BunkenTechSansPro-ExBd.ttf"
+            ]
+          }
+        }
+      ],
       [
         "expo-build-properties",
         {

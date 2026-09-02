@@ -78,16 +78,16 @@ const styles = StyleSheet.create({
     marginBottom: 18,
     alignContent: "center",
     fontSize: 32,
-    fontFamily: "Bunken-ExtraBold",
+    fontFamily: "Bunken Tech Sans Pro ExBd",
   },
 
   text: {
-    fontFamily: "Bunken-ExtraBold",
+    fontFamily: "Bunken Tech Sans Pro ExBd",
     fontSize: 20,
   },
 
   subtext: {
-    fontFamily: "Bunken-Bold",
+    fontFamily: "Bunken Tech Sans Pro Bold",
     fontSize: 16,
   },
 

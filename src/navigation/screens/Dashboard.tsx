@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   // Shared text helpers
   text: {
     alignSelf: "center",
-    fontFamily: "Bunken-Bold",
+    fontFamily: "Bunken Tech Sans Pro Bold",
   },
   subtext: {
     fontSize: 18,
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     alignContent: "center",
     flex: 1,
     fontSize: 32,
-    fontFamily: "Bunken-ExtraBold",
+    fontFamily: "Bunken Tech Sans Pro ExBd",
   },
   settingsButton: {
     width: 32,
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   bigButtonTemp: {
-    fontFamily: "Bunken-ExtraBold",
+    fontFamily: "Bunken Tech Sans Pro ExBd",
     fontSize: 52,
     alignSelf: "stretch",
     textAlign: "center",
@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
     height: 40,
   },
   smallButtonText: {
-    fontFamily: "Bunken-Bold",
+    fontFamily: "Bunken Tech Sans Pro Bold",
     alignSelf: "stretch",
     textAlign: "center",
   },

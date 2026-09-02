@@ -13,7 +13,7 @@ const RootStack = createNativeStackNavigator({
 
   screenOptions: {
     headerTitleStyle: {
-      fontFamily: "Bunken-Bold",
+      fontFamily: "Bunken Tech Sans Pro Bold",
     },
   },
 

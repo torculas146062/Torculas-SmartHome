@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
 
     alignContent: "center",
     fontSize: 32,
-    fontFamily: "Bunken-ExtraBold",
+    fontFamily: "Bunken Tech Sans Pro ExBd",
   },
 
   item: {
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    fontFamily: "Bunken-Bold",
+    fontFamily: "Bunken Tech Sans Pro Bold",
     fontSize: 18,
   },
 });
