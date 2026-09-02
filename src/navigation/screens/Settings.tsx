@@ -1,10 +1,37 @@
-import { Text } from '@react-navigation/elements';
-import { StyleSheet, View } from 'react-native';
+import { Text } from "@react-navigation/elements";
+import { useState } from "react";
+import { Pressable, StyleSheet, Switch, View } from "react-native";
 
 export function Settings() {
+  const [notificationToggle, setNotificationToggle] = useState(false);
+
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>Settings</Text>
+      <Pressable
+        android_ripple={{
+          color: "#ccc",
+          foreground: true,
+        }}
+        style={styles.item}
+        onPress={() => setNotificationToggle((a) => !a)}
+      >
+        <Text style={styles.text}>Notifications</Text>
+        <Switch
+          value={notificationToggle}
+          onValueChange={setNotificationToggle}
+        />
+      </Pressable>
+      <Pressable
+        android_ripple={{
+          color: "#ccc",
+          foreground: true,
+        }}
+        style={styles.item}
+      >
+        <Text style={styles.text}>Temperature Unit</Text>
+        <Text style={styles.text}>°C</Text>
+      </Pressable>
     </View>
   );
 }
@@ -12,18 +39,33 @@ export function Settings() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    gap: 10,
     padding: 24,
   },
   row: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 10,
   },
 
   headerText: {
     marginTop: 32,
+    marginBottom: 24,
+
     alignContent: "center",
     fontSize: 32,
-    fontFamily: "Bunken-ExtraBold"
-  }
+    fontFamily: "Bunken-ExtraBold",
+  },
+
+  item: {
+    borderColor: "#2e2e2e",
+    borderBottomWidth: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    minHeight: 60
+  },
+
+  text: {
+    fontFamily: "Bunken-Bold",
+    fontSize: 18,
+  },
 });
