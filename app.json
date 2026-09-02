@@ -67,9 +67,16 @@
       [
         "expo-build-properties",
         {
-          "buildArchs": ["arm64-v8a"]
+          "android": {
+            "buildArchs": ["arm64-v8a"]
+          }
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "befe9703-0640-4a7a-8c23-07b3910b1998"
+      }
+    }
   }
 }
