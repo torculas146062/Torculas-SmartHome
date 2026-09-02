@@ -70,7 +70,7 @@ export function Dashboard() {
               <Image
                 style={styles.fill}
                 resizeMode="contain"
-                source={require("../../../assets/settings.png")}
+                source={require("../../assets/settings.png")}
               ></Image>
             </TouchableOpacity>
           </View>
@@ -88,7 +88,7 @@ export function Dashboard() {
               <Image
                 style={styles.fill}
                 resizeMode="contain"
-                source={require("../../../assets/low-temperature.png")}
+                source={require("../../assets/low-temperature.png")}
               ></Image>
             </View>
             <Text style={[styles.text, styles.bigButtonTemp]}>26°C</Text>
@@ -96,24 +96,24 @@ export function Dashboard() {
           </Pressable>
           <View style={styles.smallButtonContainer}>
             <SmallButton
-              source={require("../../../assets/light-bulb.png")}
+              source={require("../../assets/light-bulb.png")}
               name="Light"
               state="ON"
             />
             <SmallButton
-              source={require("../../../assets/snowflake.png")}
+              source={require("../../assets/snowflake.png")}
               name="AC"
               state="24°C"
             />
           </View>
           <View style={styles.smallButtonContainer}>
             <SmallButton
-              source={require("../../../assets/lock.png")}
+              source={require("../../assets/lock.png")}
               name="Door"
               state="LOCKED"
             />
             <SmallButton
-              source={require("../../../assets/camera.png")}
+              source={require("../../assets/camera.png")}
               name="Camera"
               state="ON"
             />

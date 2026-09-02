@@ -8,7 +8,17 @@ import { useColorScheme } from "react-native";
 import { Navigation } from "./navigation";
 import { useFonts } from "expo-font";
 
-Asset.loadAsync(NavigationAssets);
+Asset.loadAsync([
+  ...NavigationAssets,
+  require("./assets/fonts/BunkenTechSansPro-Bold.ttf"),
+  require("./assets/fonts/BunkenTechSansPro-ExBd.ttf"),
+  require("./assets/settings.png"),
+  require("./assets/low-temperature.png"),
+  require("./assets/light-bulb.png"),
+  require("./assets/snowflake.png"),
+  require("./assets/lock.png"),
+  require("./assets/camera.png"),
+]);
 
 SplashScreen.preventAutoHideAsync();
 
@@ -18,8 +28,8 @@ export function App() {
   const [ready, setReady] = React.useState(false);
 
   const [loaded, error] = useFonts({
-    "Bunken-Bold": require("../assets/fonts/BunkenTechSansPro-Bold.ttf"),
-    "Bunken-ExtraBold": require("../assets/fonts/BunkenTechSansPro-ExBd.ttf")
+    "Bunken-Bold": require("./assets/fonts/BunkenTechSansPro-Bold.ttf"),
+    "Bunken-ExtraBold": require("./assets/fonts/BunkenTechSansPro-ExBd.ttf"),
   });
 
   React.useEffect(() => {
