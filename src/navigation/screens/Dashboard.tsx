@@ -1,5 +1,6 @@
 import { Text } from "@react-navigation/elements";
 import { useNavigation } from "@react-navigation/native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import {
   StyleSheet,
   TouchableOpacity,
@@ -52,81 +53,83 @@ export function Dashboard() {
   const navigation = useNavigation();
 
   return (
-    <ScrollView
-      style={styles.scrollContainer}
-      contentContainerStyle={styles.scrollContainer}
-    >
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>Smart Home</Text>
-          <TouchableOpacity
-            style={styles.settingsButton}
-            onPress={() => {
-              navigation.navigate("Settings");
+    <SafeAreaView style={styles.safeArea} edges={["left", "right", "bottom"]}>
+      <ScrollView
+        style={styles.scrollContainer}
+        contentContainerStyle={styles.scrollContent}
+      >
+        <View style={styles.container}>
+          <View style={styles.header}>
+            <Text style={styles.headerText}>Smart Home</Text>
+            <TouchableOpacity
+              style={styles.settingsButton}
+              onPress={() => {
+                navigation.navigate("Settings");
+              }}
+            >
+              <Image
+                style={styles.fill}
+                resizeMode="contain"
+                source={require("../../../assets/settings.png")}
+              ></Image>
+            </TouchableOpacity>
+          </View>
+          <Pressable
+            android_ripple={{
+              color: "#ccc",
+              foreground: true,
             }}
+            onPress={() => {
+              navigation.navigate("Devices");
+            }}
+            style={[styles.button, styles.bigButton]}
           >
-            <Image
-              style={styles.fill}
-              resizeMode="contain"
-              source={require("../../../assets/settings.png")}
-            ></Image>
+            <View style={styles.bigButtonIconContainer}>
+              <Image
+                style={styles.fill}
+                resizeMode="contain"
+                source={require("../../../assets/low-temperature.png")}
+              ></Image>
+            </View>
+            <Text style={[styles.text, styles.bigButtonTemp]}>26°C</Text>
+            <Text style={[styles.text, styles.subtext]}>Living Room</Text>
+          </Pressable>
+          <View style={styles.smallButtonContainer}>
+            <SmallButton
+              source={require("../../../assets/light-bulb.png")}
+              name="Light"
+              state="ON"
+            />
+            <SmallButton
+              source={require("../../../assets/snowflake.png")}
+              name="AC"
+              state="24°C"
+            />
+          </View>
+          <View style={styles.smallButtonContainer}>
+            <SmallButton
+              source={require("../../../assets/lock.png")}
+              name="Door"
+              state="LOCKED"
+            />
+            <SmallButton
+              source={require("../../../assets/camera.png")}
+              name="Camera"
+              state="ON"
+            />
+          </View>
+
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Devices");
+            }}
+            style={styles.viewAllButton}
+          >
+            <Text style={[styles.text, styles.bigButtonTemp, styles.subtext]}>View All Devices ➔</Text>
           </TouchableOpacity>
         </View>
-        <Pressable
-          android_ripple={{
-            color: "#ccc",
-            foreground: true,
-          }}
-          onPress={() => {
-            navigation.navigate("Devices");
-          }}
-          style={[styles.button, styles.bigButton]}
-        >
-          <View style={styles.bigButtonIconContainer}>
-            <Image
-              style={styles.fill}
-              resizeMode="contain"
-              source={require("../../../assets/low-temperature.png")}
-            ></Image>
-          </View>
-          <Text style={[styles.text, styles.bigButtonTemp]}>26°C</Text>
-          <Text style={[styles.text, styles.subtext]}>Living Room</Text>
-        </Pressable>
-        <View style={styles.smallButtonContainer}>
-          <SmallButton
-            source={require("../../../assets/light-bulb.png")}
-            name="Light"
-            state="ON"
-          />
-          <SmallButton
-            source={require("../../../assets/snowflake.png")}
-            name="AC"
-            state="24°C"
-          />
-        </View>
-        <View style={styles.smallButtonContainer}>
-          <SmallButton
-            source={require("../../../assets/lock.png")}
-            name="Door"
-            state="LOCKED"
-          />
-          <SmallButton
-            source={require("../../../assets/camera.png")}
-            name="Camera"
-            state="ON"
-          />
-        </View>
-
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate("Devices");
-          }}
-          style={styles.viewAllButton}
-        >
-          <Text style={[styles.text, styles.subtext]}>View All Devices ➔</Text>
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -141,12 +144,18 @@ const styles = StyleSheet.create({
   },
 
   // Layout
+  safeArea: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     padding: 24,
   },
   scrollContainer: {
     flex: 1,
+  },
+  scrollContent: {
+    flexGrow: 1,
   },
 
   // Header
@@ -185,7 +194,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignSelf: "stretch",
     flex: 1,
-    minHeight: 180,
+    minHeight: 200,
     marginBottom: 8,
     gap: 8,
   },
@@ -229,6 +238,6 @@ const styles = StyleSheet.create({
 
   // View all button
   viewAllButton: {
-    marginVertical: 24,
+    marginTop: 24,
   },
 });
